@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>>>>Artigos<<<</title>
+</head>
+<br>
+
+<b>
+O Portal de Artigos, administrado pelo Allan Vitor, é um espaço virtual que reúne e disponibiliza aos seus assinantes digitais, variados artigos. Ele conta com um grande acervo, que aumenta a cada semana.
+O Portal de Artigos foi criado tendo em vista o déficit de acesso das bibliotecas brasileiras à informação científica nacional e internacional. Foi desenvolvido ainda com o objetivo de reduzir os desnivelamentos regionais no acesso a essa informação no Brasil, e entre diferentes classes sociais. Ele é considerado um modelo de consórcio de bibliotecas único no mundo, pois é inteiramente financiado pelo governo brasileiro.
+</b>
+<hr/>
+</br>
+<center>
+<big>RELAÇÃO DE AUTORES</big>
+</center>
+</br>
+<ul>
+    {% for atv in autor%}
+    <li><a href="{{url_for('pagina_blog',slug=atv.slug)}}">{{atv.name}}</a></li>
+    {% endfor%}
+</ul>
+</br>
+</br>
+</br>
+
+
+</br>
+<center>
+<big>RELAÇÃO DE CATEGORIAS</big>
+</center>
+</br>
+<ul>
+    {% for categ in categoria%}
+    <li><a href="{{url_for('pagina_blog',slug=categ.slug)}}">{{categ.name}}</a></li>
+    {% endfor%}
+</ul>
+</br>
+</br>
+</br>
+
+
+
+
+
+<center>
+<big>RELAÇÃO DE ARTIGOS</big>
+</center>
+</br>
+Artigos:</br>
+
+
+<ul>
+    {% for atv in artigo%}
+    <li><a href="{{url_for('pagina_blog',slug=atv.slug)}}">{{atv.title}}</a></li>
+    {% endfor%}
+</ul>
+
+</body>
+</html>
+
+

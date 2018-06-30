@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Portal dos Artigos</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{{url_for('static', filename='default.css')}}" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+	@import url("static/layout.css");
+-->
+</style>
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <h1>Portal dos Artigos</h1>
+    <h2>os melhores estão aqui!</h2>
+  </div>
+  <div id="main-menu">
+    <ul>
+      <li class="first"><a href="#" id="main-menu1" accesskey="1">Início</a></li>
+      <li><a href="{{url_for('pagina_blog_geral')}}" id="main-menu2" accesskey="2">Artigos</a></li>
+      <li><a href="#" id="main-menu3" accesskey="3">Categorias</a></li>
+      <li><a href="#" id="main-menu4" accesskey="4">Autores</a></li>
+      <li><a href="#" id="main-menu5" accesskey="5">Sobre</a></li>
+    </ul>
+  </div>
+  <div id="content">
+    <div id="left">
+      <h2 class="bigger">Artigos em um só lugar!</h2>
+      <p>O Portal de Artigos, administrado pelo Allan Vitor, é um espaço virtual que reúne e disponibiliza aos seus assinantes digitais, variados artigos. Ele conta com um grande acervo, que aumenta a cada semana. O Portal de Artigos foi criado tendo em vista o déficit de acesso das bibliotecas brasileiras à informação científica nacional e internacional. Foi desenvolvido ainda com o objetivo de reduzir os desnivelamentos regionais no acesso a essa informação no Brasil, e entre diferentes classes sociais. Ele é considerado um modelo de consórcio de bibliotecas único no mundo, pois é inteiramente financiado pelo governo brasileiro.</p>
+      <p>O Administrador ainda está aprendendo as técnicas de programação, mas está empenhado em desenvolver o melhor conteúdo para que os usuários tenham uma boa experiência. </p>
+      <div class="hr1">
+        <hr />
+      </div>
+      <h2>Últimos Artigos</h2>
+      <p>Essa seção é reservada para os artigos que são mais recentes no blog. Aqui você encontra as últimas novidades das áreas de programação, ensino de Física, Ciências e atualidades. </p>
+      <ul>
+          {% for atv in artigo%}
+          <li><a href="{{url_for('pagina_blog',slug=atv.slug)}}">{{atv.title}}</a></li>
+          {% endfor%}
+      </ul>
+      <p>Para os que participam da ciência e da pesquisa, diariamente utilizam os artigos científicos como fonte de estudo e também como meio de publicação de seus trabalhos realizados. Ler diferentes artigos da sua área de atuação vão te atualizar quanto às novidades acadêmicas, além de ser uma ótima forma de obter referências bibliográficas ou fontes de pesquisas.</p>
+    </div>
+  </div>
+  <div id="right">
+    <h2>Sobre os Autores</h2>
+
+    {% for atv in autor%}
+
+    <h3>Id: {{id01}}</h3>
+    <p><img src="static/images/autor_01.jpeg" alt="" width="72" height="56" class="img1" /> {{atv.bio}} <a href="#">Read more&#8230;</a></p>
+    <hr class="hr1" />
+        {% endfor%}
+
+  </div>
+  <div class="hr1">
+    <hr />
+  </div>
+  <div id="footer">
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Artigos</a></li>
+      <li><a href="#">Categorias</a></li>
+      <li><a href="#">Autores</a></li>
+      <li><a href="#">Sobre</a></li>
+    </ul>
+    <p>Copyright &copy; 2018 allancarneiro.weebly.com. Designed by Allan Carneiro</p>
+  </div>
+</div>
+</body>
+</html>
