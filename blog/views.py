@@ -18,12 +18,11 @@ from .models import Category
 def pagina_home():
 
     artigo = Paper.query.all()
-    autor = Author.examples()#Category.query.all()#
-    id_autor = Author.id#Category.query.all()#
-    #categoria = Category.examples()
-        #Category.query.all()
+    autor = Author.query.all()
+    id_autor = Author.query.all()
+    categoria = Category.query.all()
 
-    return render_template("index.html", artigo=artigo, autor=artigo, categoria=artigo, id01=id_autor)
+    return render_template("index.html", artigo=artigo, autor=autor, categoria=categoria)
 
 
 
